@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="D:/Program Files/gradle-4.2.1" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/microservice-biz" />
+            <option value="$PROJECT_DIR$/microservice-dao" />
+            <option value="$PROJECT_DIR$/microservice-web" />
+            <option value="$PROJECT_DIR$/springcloud-eureka" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/microservice-biz" />
+        <option name="gradleHome" value="D:/Program Files/gradle-4.2.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/microservice-biz" />
+            <option value="$PROJECT_DIR$/microservice-dao" />
+            <option value="$PROJECT_DIR$/microservice-web" />
+            <option value="$PROJECT_DIR$/springcloud-eureka" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/microservice-dao" />
+        <option name="gradleHome" value="D:/Program Files/gradle-4.2.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/microservice-biz" />
+            <option value="$PROJECT_DIR$/microservice-dao" />
+            <option value="$PROJECT_DIR$/microservice-web" />
+            <option value="$PROJECT_DIR$/springcloud-eureka" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/microservice-web" />
+        <option name="gradleHome" value="D:/Program Files/gradle-4.2.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/microservice-biz" />
+            <option value="$PROJECT_DIR$/microservice-dao" />
+            <option value="$PROJECT_DIR$/microservice-web" />
+            <option value="$PROJECT_DIR$/springcloud-eureka" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/springcloud-eureka" />
+        <option name="gradleHome" value="D:/Program Files/gradle-4.2.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/microservice-biz" />
+            <option value="$PROJECT_DIR$/microservice-dao" />
+            <option value="$PROJECT_DIR$/microservice-web" />
+            <option value="$PROJECT_DIR$/springcloud-eureka" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

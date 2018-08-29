@@ -1,0 +1,61 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <bean id="parentDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url" value="jdbc:postgresql://localhost:5432/test"/>
+        <property name="username" value="postgres"/>
+        <property name="password" value="root"/>
+        <property name="maxActive" value="30"/>
+    </bean>
+
+    <!--可以指定parent，将公共属性放到单独的bean-->
+    <bean id="test" parent="parentDataSource">
+        <property name="url" value="jdbc:postgresql://localhost:5432/test"/>
+    </bean>
+    <bean id="test01" parent="parentDataSource">
+        <property name="url" value="jdbc:postgresql://localhost:5432/test01"/>
+    </bean>
+    <bean id="test02" parent="parentDataSource">
+        <property name="url" value="jdbc:postgresql://localhost:5432/test02"/>
+    </bean>
+    <bean id="routingDataSource" class="com.zxhl.common.datasource.MyRoutingDataSource">
+        <property name="targetDataSources">
+            <map>
+                <entry key="test" value-ref="test"/>
+                <entry key="test02" value-ref="test02"/>
+                <entry key="test01" value-ref="test01"/>
+            </map>
+        </property>
+        <property name="defaultTargetDataSource" ref="test01"/>
+    </bean>
+    <bean id="lazyDataSource" class="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy">
+        <property name="targetDataSource">
+            <ref bean="routingDataSource"/>
+        </property>
+    </bean>
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="lazyDataSource"/>
+        <property name="plugins">
+            <array>
+                <ref bean="mySqlIntercepter"/>
+            </array>
+        </property>
+    </bean>
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="lazyDataSource"/>
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.zxhl.test" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+    <bean id="mySqlIntercepter" class="com.zxhl.common.datasource.MySqlIntercepter">
+        <!--<property name="dsh" ref="routingDataSource"/>-->
+        <property name="shardingDataSourceRouter" ref="shardingDataSource" />
+    </bean>
+    <bean id="shardingDataSource" class="com.zxhl.common.datasource.MyShardingDataSourceRouter"/>
+</beans>

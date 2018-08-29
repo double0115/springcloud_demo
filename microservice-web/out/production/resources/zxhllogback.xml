@@ -1,0 +1,54 @@
+<!-- Logback configuration. See http://logback.qos.ch/manual/index.html -->
+<configuration scan="true" scanPeriod="10 seconds">
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+    <conversionRule conversionWord="action" converterClass="com.zxhl.filters.log.convert.ActionConvert" />
+    <conversionRule conversionWord="elapsedTime" converterClass="com.zxhl.filters.log.convert.ElapasedTimeConvert" />
+    <conversionRule conversionWord="modulename" converterClass="com.zxhl.filters.log.convert.ModelnameConvert" />
+
+    <appender name="INFO_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="com.zxhl.filters.log.LogFilter" />
+        <File>${LOG_PATH}/wenba99.com/default.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/wenba99.com/default-%d{yyyyMMdd}.log.%i</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>200MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>15</maxHistory>
+        </rollingPolicy>
+        <!-- 日志输出格式 默认字符串格式，改成json-->
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <!-- 使用自定义的JsonFactory的装饰器,禁用jackson对非ascii码字符进行escape编码 -->
+            <jsonFactoryDecorator class="com.zxhl.filters.log.CustomJsonFactoryDecorator"/>
+            <providers>
+                <pattern>
+                    <pattern>
+                        {
+                        "action": "%action",
+                        "modulename": "%modulename",
+                        "elapsedTime": "%elapsedTime",
+                        "level": "%level",
+                        "host": "%mdc{host}",
+                        "clienthost": "%mdc{clienthost}",
+                        "timestamp": "%date",
+                        "exportable": "%X{X-Span-Export:-}",
+                        "pid": "${PID:-}",
+                        "thread": "%thread",
+                        "class": "%logger{40}",
+                        "message": "%message"
+                        }
+                    </pattern>
+                </pattern>
+            </providers>
+        </encoder>
+
+        <!--过滤掉info以下级别的日志-->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="INFO_FILE" />
+    </root>
+
+</configuration>

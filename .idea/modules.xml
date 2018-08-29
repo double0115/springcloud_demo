@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservice-biz_main.iml" filepath="$PROJECT_DIR$/.idea/modules/microservice-biz_main.iml" group="microservice-biz" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservice-biz_test.iml" filepath="$PROJECT_DIR$/.idea/modules/microservice-biz_test.iml" group="microservice-biz" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservice-dao_main.iml" filepath="$PROJECT_DIR$/.idea/modules/microservice-dao_main.iml" group="microservice-dao" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservice-dao_test.iml" filepath="$PROJECT_DIR$/.idea/modules/microservice-dao_test.iml" group="microservice-dao" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservice-web_main.iml" filepath="$PROJECT_DIR$/.idea/modules/microservice-web_main.iml" group="microservice-web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/microservice-web_test.iml" filepath="$PROJECT_DIR$/.idea/modules/microservice-web_test.iml" group="microservice-web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springcloud-eureka_main.iml" filepath="$PROJECT_DIR$/.idea/modules/springcloud-eureka_main.iml" group="springcloud-eureka" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springcloud-eureka_test.iml" filepath="$PROJECT_DIR$/.idea/modules/springcloud-eureka_test.iml" group="springcloud-eureka" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springcloud_demo.iml" filepath="$PROJECT_DIR$/.idea/modules/springcloud_demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springcloud_demo-microservice-biz.iml" filepath="$PROJECT_DIR$/.idea/modules/springcloud_demo-microservice-biz.iml" group="microservice-biz" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2010614989/springcloud_demo-microservice-dao.iml" filepath="$PROJECT_DIR$/.idea/modules/2010614989/springcloud_demo-microservice-dao.iml" group="microservice-dao" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2010633359/springcloud_demo-microservice-web.iml" filepath="$PROJECT_DIR$/.idea/modules/2010633359/springcloud_demo-microservice-web.iml" group="microservice-web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springcloud_demo-springcloud-eureka.iml" filepath="$PROJECT_DIR$/.idea/modules/springcloud_demo-springcloud-eureka.iml" group="springcloud-eureka" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springcloud_demo_main.iml" filepath="$PROJECT_DIR$/.idea/modules/springcloud_demo_main.iml" group="springcloud_demo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springcloud_demo_test.iml" filepath="$PROJECT_DIR$/.idea/modules/springcloud_demo_test.iml" group="springcloud_demo" />
+    </modules>
+  </component>
+</project>
